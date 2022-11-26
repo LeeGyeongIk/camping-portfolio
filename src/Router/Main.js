@@ -1,24 +1,14 @@
 import '../css/route/Main.css';
 import MainVideo from '../img/route/Main/LandingVideo/main_video.mp4';
-import SURO_1_Img_1 from '../img/route/Main/CampingZone/SURO1_img_1.jpeg';
 import SURO_1_Img_2 from '../img/route/Main/CampingZone/SURO1_img_2.jpeg';
-import SURO_1_Img_3 from '../img/route/Main/CampingZone/SURO1_img_3.jpeg';
-import SURO_1_Img_4 from '../img/route/Main/CampingZone/SURO1_img_4.jpeg';
-import KIMHAE_1_Img_1 from '../img/route/Main/CampingZone/KIMHAE1_img_1.jpeg';
-import KIMHAE_1_Img_2 from '../img/route/Main/CampingZone/KIMHAE1_img_2.jpeg';
-import KIMHAE_1_Img_3 from '../img/route/Main/CampingZone/KIMHAE1_img_3.jpeg';
 import KIMHAE_1_Img_4 from '../img/route/Main/CampingZone/KIMHAE1_img_4.jpeg';
-import SINEO_1_Img_1 from '../img/route/Main/CampingZone/SINEO1_img_1.jpeg';
-import SINEO_1_Img_2 from '../img/route/Main/CampingZone/SINEO1_img_2.jpeg';
 import SINEO_1_Img_3 from '../img/route/Main/CampingZone/SINEO1_img_3.jpeg';
-import SINEO_1_Img_4 from '../img/route/Main/CampingZone/SINEO1_img_4.jpeg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStore, faCampground, faMoneyBill1, faHeadset, faComments, faCalendar , faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faStore, faCampground, faMoneyBill1, faHeadset, faComments, faCalendar, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -176,6 +166,25 @@ let ShortCut = () => {
                         <Col sm>
                             <div className="shortcut-card">
                                 <div className="shortcut-comment">
+                                    <h5>온라인예약</h5>
+                                    <span>온라인 예약부터<br />결제까지 한번에!</span>
+                                    <span>
+                                        바로가기
+                                        <span>
+                                            <FontAwesomeIcon icon={faChevronRight} />
+                                        </span>
+                                    </span>
+                                </div>
+                                <div className="shortcut-card-icon">
+                                    <FontAwesomeIcon icon={faCalendar} />
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm>
+                            <div className="shortcut-card">
+                                <div className="shortcut-comment">
                                     <h5>이용•요금안내</h5>
                                     <span>갸야랜드 달빛야영장 이용정보 및<br />요금정보를 안내드립니다</span>
                                     <span>
@@ -190,8 +199,6 @@ let ShortCut = () => {
                                 </div>
                             </div>
                         </Col>
-                    </Row>
-                    <Row>
                         <Col sm>
                             <div className="shortcut-card">
                                 <div className="shortcut-comment">
@@ -210,7 +217,7 @@ let ShortCut = () => {
                             </div>
                         </Col>
                         <Col sm>
-                            <div className="shortcut-card">
+                            <div className="shortcut-card shortcut-disable">
                                 <div className="shortcut-comment">
                                     <h5>문의게시판</h5>
                                     <span>궁금하신 점은 글을 남겨주세요<br />빠르게 답변드리겠습니다</span>
@@ -223,23 +230,6 @@ let ShortCut = () => {
                                 </div>
                                 <div className="shortcut-card-icon">
                                     <FontAwesomeIcon icon={faComments} />
-                                </div>
-                            </div>
-                        </Col>
-                        <Col sm>
-                            <div className="shortcut-card">
-                                <div className="shortcut-comment">
-                                    <h5>온라인예약</h5>
-                                    <span>온라인 예약부터<br />결제까지 한번에!</span>
-                                    <span>
-                                        바로가기
-                                        <span>
-                                            <FontAwesomeIcon icon={faChevronRight} />
-                                        </span>
-                                    </span>
-                                </div>
-                                <div className="shortcut-card-icon">
-                                    <FontAwesomeIcon icon={faCalendar} />
                                 </div>
                             </div>
                         </Col>

@@ -11,7 +11,7 @@ let MainInfo = () => {
     return (
         <>
             <MainBackGround />
-            <Greeting />
+            <Greeting title="인사말" content="여러분의 하루에 최고가 되도록 최선을 다하겠습니다."/>
             <Introduction />
         </>
     );

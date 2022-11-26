@@ -5,7 +5,7 @@
 }
 
 .content-header h1 {
-    font-size: rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1%;
 }
@@ -133,6 +133,7 @@
     padding: 2rem;
     text-align: left;
     transition: all 0.1s linear;
+    cursor: pointer;
 }
 
 .shortcut-card:hover {
@@ -181,6 +182,10 @@
     transform: translateY(-50%);
     margin-right: 3rem;
     font-size: 2rem;
+}
+
+.shortcut-disable {
+    display: none;
 }
 
 .fa-chevron-right {

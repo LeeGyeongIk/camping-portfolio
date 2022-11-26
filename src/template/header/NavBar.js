@@ -13,7 +13,7 @@ let NavBar = () => {
         window.addEventListener('scroll', updateScroll);
 
         return () => {
-            window.removeEventListener('scroll', updateScroll); //unmount시 해제되도록
+            window.removeEventListener('scroll', updateScroll); //unmount시 해제
         };
     }, []);
 
@@ -28,27 +28,16 @@ let NavBar = () => {
 
             <div className="menu">
                 <ul>
-                    <p>달빛야영장소개</p>
-                    <li>달빛야영장</li>
-                    <li>둘러보기</li>
-                    <li>오시는길</li>
+                    <p onClick={() => { navigate('/MainInfo') }}>달빛야영장소개</p>
+                    <li onClick={() => { navigate('/MainInfo') }}>달빛야영장</li>
+                    <li onClick={() => { navigate('/LookAround') }}>둘러보기</li>
+                    <li onClick={() => { navigate('/Location') }}>오시는길</li>
                 </ul>
                 <ul>
-                    <p>캠핑구역</p>
-                    <li>수로존</li>
-                    <li>김해존</li>
-                    <li>신어존</li>
-                </ul>
-                <ul>
-                    <p>부대시설</p>
-                    <li>내부시설</li>
-                    <li>외부시설</li>
-                    <li>편의시설</li>
-                </ul>
-                <ul>
-                    <p>주변관광</p>
-                    <li>유적지</li>
-                    <li>체험</li>
+                    <p onClick={() => { navigate('/SURO') }}>캠핑구역</p>
+                    <li onClick={() => { navigate('/SURO') }}>수로존</li>
+                    <li onClick={() => { navigate('/KIMHAE') }}>김해존</li>
+                    <li onClick={() => { navigate('/SINEO') }}>신어존</li>
                 </ul>
                 <ul>
                     <p>예약안내</p>

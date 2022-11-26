@@ -7,7 +7,7 @@ let Location = () => {
     return (
         <div>
             <MainBackGround />
-            <Greeting />
+            <Greeting title="오시는길" content="달빛야영장에 오시는길을 안내드립니다." />
             <KakaoMap />
             <LocationIntroduction />
         </div>

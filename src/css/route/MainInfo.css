@@ -23,14 +23,6 @@
     border: 0;
 }
 
-.greeting-title h3::before {
-    content: '인사말';
-}
-
-.greeting-content span::before {
-    content: '여러분의 하루에 최고가 되도록 최선을 다하겠습니다.';
-}
-
 .introduction {
     padding: 2rem;
     margin: 0 auto;

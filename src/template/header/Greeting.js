@@ -1,13 +1,13 @@
 import '../../css/header/Greeting.css';
 
-let Greeting = () => {
+let Greeting = (props) => {
     return (
         <div className="greeting section-margin-top-5">
             <div className="greeting-title content-margin-bottom-1">
-                <h3></h3>
+                <h3>{props.title}</h3>
             </div>
             <div className="greeting-content">
-                <span></span>
+                <span>{props.content}</span>
             </div>
             <div className="horizen">
                 <hr />

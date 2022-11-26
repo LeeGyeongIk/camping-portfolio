@@ -10,14 +10,6 @@
     margin-bottom: 1% !important;
 }
 
-.greeting-title h3::before {
-    content: '오시는길';
-}
-
-.greeting-content span::before {
-    content: '달빛야영장에 오시는길을 안내드립니다.';
-}
-
 .kakao-map {
     width: 60%;
     height: 30rem;
@@ -36,6 +28,7 @@
 }
 
 .location-introduction th {
+    font-size: 1.2rem;
     width: 20%;
     text-align: center;
     padding: 1%;
@@ -44,8 +37,9 @@
 }
 
 .location-introduction td {
+    font-size: 1.2rem;
     width: 80%;
     text-align: left;
-    padding: 1%;
+    padding: 2%;
     border-bottom: 2px solid silver;
 }
