@@ -35,11 +35,13 @@
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 8%;
+    white-space: nowrap;
 }
 
 .landing-comment p {
     font-size: 1.3rem;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .scroll-down {
@@ -197,6 +199,12 @@
     color: darkgreen !important;
 }
 
+.notice-responsive {
+    display: none;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
 .notice {
     margin-top: 5%;
     margin-bottom: 10%;
@@ -324,5 +332,32 @@
 
     to {
         transform: translateY(0.5rem);
+    }
+}
+
+@media screen and (max-width: 1000px) {    
+    .notice-responsive {
+        display: block;
+    }
+
+    .notice {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {    
+    .landing-comment h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 8%;
+    }
+    
+    .landing-comment p {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .scroll-down {
+        display: none;
     }
 }

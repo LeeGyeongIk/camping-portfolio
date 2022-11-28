@@ -12,17 +12,6 @@
     margin-bottom: 1% !important;
 }
 
-.horizen {
-    width: 3rem;
-    margin: 0 auto;
-}
-
-.horizen hr {
-    background: orangered;
-    height: 5px;
-    border: 0;
-}
-
 .introduction {
     padding: 2rem;
     margin: 0 auto;

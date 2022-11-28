@@ -68,6 +68,7 @@ div {
     padding: 1%;
     margin-bottom: 10%;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .menu ul:hover li {
@@ -76,4 +77,32 @@ div {
 
 .menu ul>li:hover {
     color: gold;
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        left: 1%;
+    }
+
+    .menu {
+        right: 1%;
+    }
+
+    .menu ul {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        top: 1%;
+    }
+    
+    .logo p:nth-child(1) {
+        font-size: 0.7rem;
+    }
+    
+    .logo p:nth-child(2) {
+        font-size: 1.2rem;
+    }
 }
