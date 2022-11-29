@@ -2,6 +2,8 @@ import '../css/route/Reservation.css';
 import { useState } from 'react';
 import MainBackGround from '../template/header/MainBackGround';
 import Greeting from '../template/header/Greeting';
+import GetImg from '../module/GetImg';
+import GetSwiper from '../module/GetSwiper';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,26 +14,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import Form from "react-bootstrap/Form";
 import { ko } from "date-fns/esm/locale";
 
-import SURO_1_Img_1 from '../img/route/Main/CampingZone/SURO1_img_1.jpeg';
-import SURO_1_Img_2 from '../img/route/Main/CampingZone/SURO1_img_2.jpeg';
-import SURO_1_Img_3 from '../img/route/Main/CampingZone/SURO1_img_3.jpeg';
-import SURO_1_Img_4 from '../img/route/Main/CampingZone/SURO1_img_4.jpeg';
-import KIMHAE_1_Img_1 from '../img/route/Main/CampingZone/KIMHAE1_img_1.jpeg';
-import SINEO_1_Img_1 from '../img/route/Main/CampingZone/SINEO1_img_1.jpeg';
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-
-import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper";
-
 let Reservation = () => {
     const [startDate, setStartDate] = useState(new Date());
-    const [campingSiteImg, setCampingSiteImg] = useState(SURO_1_Img_1);
+    const [selectCampingSite, setSelectCampingSite] = useState(0);
+    const campingSiteName = ["수로존", "김해존", "신어존"];
+    const campingSiteImg = GetImg;
 
     return (
         <div>
@@ -40,8 +27,10 @@ let Reservation = () => {
             <SelectOptions
                 startDate={startDate}
                 setStartDate={setStartDate}
+                campingSiteName={campingSiteName}
                 campingSiteImg={campingSiteImg}
-                setCampingSiteImg={setCampingSiteImg}
+                selectCampingSite={selectCampingSite}
+                setSelectCampingSite={setSelectCampingSite}
             />
         </div>
     );
@@ -86,49 +75,30 @@ let SelectOptions = (props) => {
                 <Row>
                     <Col sm>
                         <div className="select-camping-site content-margin-bottom-3">
-                            <div className="select-camping-site-pill">
-                                <span>수로존</span>
-                                <span>김해존</span>
-                                <span>신어존</span>
+                            <div className="select-camping-site-pill-wrap">
+                                <div
+                                    onClick={() => { props.setSelectCampingSite(0) }}
+                                    className={`select-camping-site-pill ${props.selectCampingSite == 0 ? "camping-site-selected" : null}`}>
+                                    <span>수로존</span>
+                                </div>
+                                <div
+                                    onClick={() => { props.setSelectCampingSite(1) }}
+                                    className={`select-camping-site-pill ${props.selectCampingSite == 1 ? "camping-site-selected" : null}`}>
+                                    <span>김해존</span>
+                                </div>
+                                <div
+                                    onClick={() => { props.setSelectCampingSite(2) }}
+                                    className={`select-camping-site-pill ${props.selectCampingSite == 2 ? "camping-site-selected" : null}`}>
+                                    <span>신어존</span>
+                                </div>
                             </div>
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col sm>
-                        {/* <div
-                            className="select-camping-site-img"
-                            style={{ backgroundImage: `url(${props.campingSiteImg})` }}>
-                        </div> */}
                         <div className="select-camping-site-img content-margin-bottom-3">
-                            <Swiper
-                                style={{
-                                    "--swiper-navigation-color": "#fff",
-                                    "--swiper-pagination-color": "#fff",
-                                }}
-                                loop={true}
-                                spaceBetween={10}
-                                navigation={true}
-                                autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                }}
-                                modules={[FreeMode, Navigation, Thumbs, Autoplay]}
-                                className="mySwiper2"
-                            >
-                                <SwiperSlide>
-                                    <div className="slide-img" style={{ backgroundImage: `url(${SURO_1_Img_1})` }}></div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="slide-img" style={{ backgroundImage: `url(${SURO_1_Img_2})` }}></div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="slide-img" style={{ backgroundImage: `url(${SURO_1_Img_3})` }}></div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="slide-img" style={{ backgroundImage: `url(${SURO_1_Img_4})` }}></div>
-                                </SwiperSlide>
-                            </Swiper>
+                            <GetSwiper campingSiteImg={props.campingSiteImg[props.selectCampingSite]} />
                         </div>
                     </Col>
                 </Row>
@@ -138,7 +108,7 @@ let SelectOptions = (props) => {
                             <tbody>
                                 <tr>
                                     <th>사이트명</th>
-                                    <td>수로존</td>
+                                    <td>{ props.campingSiteName[props.selectCampingSite] }</td>
                                 </tr>
                                 <tr>
                                     <th>데크</th>

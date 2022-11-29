@@ -28,17 +28,22 @@
     resize: none;
 }
 
-.select-camping-site-pill {
+.select-camping-site-pill-wrap {
     text-align: left;
 }
 
-.select-camping-site-pill span {
+.select-camping-site-pill {
 	display: inline-block;
 	border: 1px solid lightgray;
     background-color: white;
 	border-radius: 100px;
 	padding: 3px 12px 5px 12px;
     margin-right: 1rem;
+}
+
+.camping-site-selected {
+    background-color: #223589;
+    color: white;
 }
 
 .select-camping-site-img {

@@ -1,23 +1,8 @@
 import '../../css/route/CampingSite.css';
 import MainBackGround from "../../template/header/MainBackGround";
 import Greeting from "../../template/header/Greeting";
-import React, { useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
-
-// import required modules
-import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper";
-
-import KIMHAE_1_Img_1 from '../../img/route/Main/CampingZone/KIMHAE1_img_1.jpeg';
-import KIMHAE_1_Img_2 from '../../img/route/Main/CampingZone/KIMHAE1_img_2.jpeg';
-import KIMHAE_1_Img_3 from '../../img/route/Main/CampingZone/KIMHAE1_img_3.jpeg';
-import KIMHAE_1_Img_4 from '../../img/route/Main/CampingZone/KIMHAE1_img_4.jpeg';
+import GetImg from '../../module/GetImg';
+import GetSwiper from '../../module/GetSwiper';
 
 let KIMHAE = () => {
     return (
@@ -31,39 +16,10 @@ let KIMHAE = () => {
 }
 
 let Slide = () => {
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
+    const campingSiteImg = GetImg[1];
     return (
         <div className="slide">
-            <Swiper
-                style={{
-                    "--swiper-navigation-color": "#fff",
-                    "--swiper-pagination-color": "#fff",
-                }}
-                loop={true}
-                spaceBetween={10}
-                navigation={true}
-                thumbs={{ swiper: thumbsSwiper }}
-                autoplay={{
-                    delay: 3000,
-                    disableOnInteraction: false,
-                }}
-                modules={[FreeMode, Navigation, Thumbs, Autoplay]}
-                className="mySwiper2"
-            >
-                <SwiperSlide>
-                    <div className="slide-img" style={{ backgroundImage: `url(${KIMHAE_1_Img_1})` }}></div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide-img" style={{ backgroundImage: `url(${KIMHAE_1_Img_2})` }}></div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide-img" style={{ backgroundImage: `url(${KIMHAE_1_Img_3})` }}></div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="slide-img" style={{ backgroundImage: `url(${KIMHAE_1_Img_4})` }}></div>
-                </SwiperSlide>
-            </Swiper>
+            <GetSwiper campingSiteImg={campingSiteImg} />
         </div>
     );
 }
